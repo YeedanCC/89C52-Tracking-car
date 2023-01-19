@@ -1,0 +1,85 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\hp\Desktop\智能循迹小车(1)\改过芯片的.uvproj
+Project File Date:  12/23/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling Delay.c...
+DELAY.C(23): warning C280: 'j': unreferenced local variable
+compiling Infraredtrack.c...
+compiling main.c...
+compiling Motordriver.c...
+compiling MoveState.c...
+compiling Timer.c...
+compiling lcd1602.c...
+linking...
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    CARRIGHT/MOVESTATE
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    CARLEFT/MOVESTATE
+*** WARNING L26: DATA TYPES SLIGHTLY DIFFERENT
+    SYMBOL:  PWML
+    MODULE:  Infraredtrack.obj (INFRAREDTRACK)
+   DEFINED:  Timer.obj (TIMER)
+*** WARNING L26: DATA TYPES SLIGHTLY DIFFERENT
+    SYMBOL:  PWMR
+    MODULE:  Infraredtrack.obj (INFRAREDTRACK)
+   DEFINED:  Timer.obj (TIMER)
+*** WARNING L26: DATA TYPES SLIGHTLY DIFFERENT
+    SYMBOL:  PWML
+    MODULE:  main.obj (MAIN)
+   DEFINED:  Timer.obj (TIMER)
+*** WARNING L26: DATA TYPES SLIGHTLY DIFFERENT
+    SYMBOL:  PWMR
+    MODULE:  main.obj (MAIN)
+   DEFINED:  Timer.obj (TIMER)
+*** WARNING L26: DATA TYPES SLIGHTLY DIFFERENT
+    SYMBOL:  m
+    MODULE:  main.obj (MAIN)
+   DEFINED:  MoveState.obj (MOVESTATE)
+Program Size: data=22.0 xdata=0 const=0 code=1597
+creating hex file from "改过芯片的"...
+"改过芯片的" - 0 Error(s), 8 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling Delay.c...
+DELAY.C(23): warning C280: 'j': unreferenced local variable
+compiling Infraredtrack.c...
+compiling main.c...
+compiling Motordriver.c...
+compiling MoveState.c...
+compiling Timer.c...
+compiling lcd1602.c...
+linking...
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    CARRIGHT/MOVESTATE
+*** WARNING L16: UNCALLED FUNCTION, IGNORED FOR OVERLAY PROCESS
+    NAME:    CARLEFT/MOVESTATE
+*** WARNING L26: DATA TYPES SLIGHTLY DIFFERENT
+    SYMBOL:  PWML
+    MODULE:  Infraredtrack.obj (INFRAREDTRACK)
+   DEFINED:  Timer.obj (TIMER)
+*** WARNING L26: DATA TYPES SLIGHTLY DIFFERENT
+    SYMBOL:  PWMR
+    MODULE:  Infraredtrack.obj (INFRAREDTRACK)
+   DEFINED:  Timer.obj (TIMER)
+*** WARNING L26: DATA TYPES SLIGHTLY DIFFERENT
+    SYMBOL:  PWML
+    MODULE:  main.obj (MAIN)
+   DEFINED:  Timer.obj (TIMER)
+*** WARNING L26: DATA TYPES SLIGHTLY DIFFERENT
+    SYMBOL:  PWMR
+    MODULE:  main.obj (MAIN)
+   DEFINED:  Timer.obj (TIMER)
+*** WARNING L26: DATA TYPES SLIGHTLY DIFFERENT
+    SYMBOL:  m
+    MODULE:  main.obj (MAIN)
+   DEFINED:  MoveState.obj (MOVESTATE)
+Program Size: data=26.0 xdata=0 const=0 code=1663
+creating hex file from "改过芯片的"...
+"改过芯片的" - 0 Error(s), 8 Warning(s).

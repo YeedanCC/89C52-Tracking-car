@@ -1,0 +1,8 @@
+".\Objects\main.obj",
+".\Objects\Motordriver.obj",
+".\Objects\MoveState.obj",
+".\Objects\Delay.obj",
+".\Objects\Timer.obj",
+".\Objects\Infraredtrack.obj" 
+TO ".\Objects\project" 
+PRINT(".\Listings\project.m51") RAMSIZE(256) 

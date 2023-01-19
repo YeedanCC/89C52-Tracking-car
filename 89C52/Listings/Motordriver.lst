@@ -1,0 +1,44 @@
+C51 COMPILER V9.00   MOTORDRIVER                                                           12/19/2021 16:45:47 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE MOTORDRIVER
+OBJECT MODULE PLACED IN .\Objects\Motordriver.obj
+COMPILER INVOKED BY: D:\C51\BIN\C51.EXE Motordriver.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\Motordriver.lst) OBJECT
+                    -(.\Objects\Motordriver.obj)
+
+line level    source
+
+   1          #include <reg52.h>
+   2          
+   3          sbit IN1 = P1^7;
+   4          sbit IN2 = P1^6;
+   5          sbit IN3 = P1^5;
+   6          sbit IN4 = P1^4;
+   7          
+   8          
+   9          void RightMotoForward()
+  10          {IN3=0; IN4=1;}
+  11          void RightMotoBack()
+  12          {IN3=1; IN4=0;}
+  13          void LeftMotoBack()
+  14          {IN1=0; IN2=1;}
+  15          void LeftMotoForward()
+  16          {IN1=1; IN2=0;}
+  17          void RightMotoStop()
+  18          {IN3=1; IN4=1;}
+  19          void LeftMotoStop()
+  20          {IN1=1; IN2=1;}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     30    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,505 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/19/2021  16:45:48  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\Motordriver.obj, .\Objects\MoveState.obj, .\Objects\Delay.obj, .\Obje
+>> cts\Timer.obj, .\Objects\Infraredtrack.obj TO .\Objects\project PRINT (.\Listings\project.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  .\Objects\Motordriver.obj (MOTORDRIVER)
+  .\Objects\MoveState.obj (MOVESTATE)
+  .\Objects\Delay.obj (DELAY)
+  .\Objects\Timer.obj (TIMER)
+  .\Objects\Infraredtrack.obj (INFRAREDTRACK)
+  D:\\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  D:\\C51\LIB\C51S.LIB (STRLEN)
+  D:\\C51\LIB\C51S.LIB (?C_INIT)
+  D:\\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  .\Objects\project (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         ?DT?TIMER
+            DATA    000EH     0005H     UNIT         ?DT?_WRITE1602_STR?MAIN
+            DATA    0013H     0001H     UNIT         ?DT?MAIN
+            IDATA   0014H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     07F2H                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0073H     UNIT         ?PR?TRACK?INFRAREDTRACK
+            CODE    08FFH     0048H     UNIT         ?PR?TIMER0_ROUTINUE?TIMER
+            CODE    0947H     0046H     UNIT         ?C?LIB_CODE
+            CODE    098DH     0045H     UNIT         ?PR?XIANSHI?MAIN
+            CODE    09D2H     0035H     UNIT         ?PR?_DELAY?MAIN
+            CODE    0A07H     002DH     UNIT         ?PR?_WRITE1602_STR?MAIN
+            CODE    0A34H     0024H     UNIT         ?CO?MAIN
+            CODE    0A58H     001AH     UNIT         ?PR?INIT?MAIN
+            CODE    0A72H     0016H     UNIT         ?PR?MAIN?MAIN
+            CODE    0A88H     0015H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0A9DH     0015H     UNIT         ?PR?_STRLEN?STRLEN
+            CODE    0AB2H     0010H     UNIT         ?PR?TIMER0_INIT?TIMER
+            CODE    0AC2H     000DH     UNIT         ?C_INITSEG
+            CODE    0ACFH     000AH     UNIT         ?PR?_WRITE_COM?MAIN
+            CODE    0AD9H     000AH     UNIT         ?PR?_WRITE_DATA?MAIN
+            CODE    0AE3H     0006H     UNIT         ?PR?CARGO?MOVESTATE
+            CODE    0AE9H     0006H     UNIT         ?PR?CARBACK?MOVESTATE
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/19/2021  16:45:48  PAGE 2
+
+
+            CODE    0AEFH     0006H     UNIT         ?PR?CARRIGHT?MOVESTATE
+            CODE    0AF5H     0006H     UNIT         ?PR?CARLEFT?MOVESTATE
+            CODE    0AFBH     0006H     UNIT         ?PR?CARSTOP?MOVESTATE
+            CODE    0B01H     0005H     UNIT         ?PR?RIGHTMOTOFORWARD?MOTORDRIVER
+            CODE    0B06H     0005H     UNIT         ?PR?RIGHTMOTOBACK?MOTORDRIVER
+            CODE    0B0BH     0005H     UNIT         ?PR?LEFTMOTOBACK?MOTORDRIVER
+            CODE    0B10H     0005H     UNIT         ?PR?LEFTMOTOFORWARD?MOTORDRIVER
+            CODE    0B15H     0005H     UNIT         ?PR?RIGHTMOTOSTOP?MOTORDRIVER
+            CODE    0B1AH     0005H     UNIT         ?PR?LEFTMOTOSTOP?MOTORDRIVER
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\project (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN
+  +--> ?PR?TIMER0_INIT?TIMER
+  +--> ?PR?TRACK?INFRAREDTRACK
+
+?PR?TRACK?INFRAREDTRACK
+  +--> ?PR?CARSTOP?MOVESTATE
+  +--> ?PR?CARGO?MOVESTATE
+
+?PR?CARSTOP?MOVESTATE
+  +--> ?PR?RIGHTMOTOSTOP?MOTORDRIVER
+  +--> ?PR?LEFTMOTOSTOP?MOTORDRIVER
+
+?PR?CARGO?MOVESTATE
+  +--> ?PR?RIGHTMOTOFORWARD?MOTORDRIVER
+  +--> ?PR?LEFTMOTOFORWARD?MOTORDRIVER
+
+
+
+IGNORED SYMBOLS:
+   _DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\project (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/19/2021  16:45:48  PAGE 3
+
+
+  B:00A0H.4       PUBLIC        lcden
+  C:0A34H         PUBLIC        table
+  D:00A8H         PUBLIC        IE
+  C:09E8H         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  B:00A0H.5       PUBLIC        lcdrs
+  C:0A72H         PUBLIC        main
+  B:00A0H.6       PUBLIC        dula
+  C:0AD9H         PUBLIC        _write_data
+  B:00A0H.7       PUBLIC        wela
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0A58H         PUBLIC        init
+  C:0A44H         PUBLIC        table1
+  C:0ACFH         PUBLIC        _write_com
+  D:0013H         PUBLIC        num
+  D:00C8H         PUBLIC        T2CON
+  C:0A07H         PUBLIC        _Write1602_Str
+  C:098DH         PUBLIC        xianshi
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0A72H         LINE#         25
+  C:0A72H         LINE#         26
+  C:0A72H         LINE#         27
+  C:0A75H         LINE#         28
+  C:0A77H         LINE#         29
+  C:0A7DH         LINE#         30
+  C:0A83H         LINE#         31
+  C:0A83H         LINE#         32
+  C:0A83H         LINE#         42
+  C:0A83H         LINE#         43
+  C:0A83H         LINE#         44
+  C:0A86H         LINE#         45
+  -------         ENDPROC       MAIN
+  -------         PROC          XIANSHI
+  C:098DH         LINE#         49
+  C:098DH         LINE#         50
+  C:098DH         LINE#         51
+  C:0990H         LINE#         52
+  C:09AAH         LINE#         53
+  C:09C4H         LINE#         54
+  C:09C4H         LINE#         55
+  C:09C4H         LINE#         56
+  C:09C9H         LINE#         57
+  C:09D0H         LINE#         58
+  -------         ENDPROC       XIANSHI
+  -------         PROC          L?0025
+  -------         ENDPROC       L?0025
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        z
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:09E8H         LINE#         60
+  C:09E8H         LINE#         61
+  C:09E8H         LINE#         63
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/19/2021  16:45:48  PAGE 4
+
+
+  C:09F1H         LINE#         64
+  C:0A06H         LINE#         65
+  -------         ENDPROC       _DELAY
+  -------         PROC          _WRITE_COM
+  D:0003H         SYMBOL        com
+  C:0ACFH         LINE#         66
+  C:0AD1H         LINE#         67
+  C:0AD1H         LINE#         68
+  C:0AD3H         LINE#         70
+  C:0AD3H         LINE#         71
+  C:0AD3H         LINE#         72
+  C:0AD3H         LINE#         73
+  C:0AD3H         LINE#         74
+  C:0AD6H         LINE#         75
+  C:0AD8H         LINE#         76
+  -------         ENDPROC       _WRITE_COM
+  -------         PROC          _WRITE_DATA
+  D:0003H         SYMBOL        date
+  C:0AD9H         LINE#         77
+  C:0ADBH         LINE#         78
+  C:0ADBH         LINE#         79
+  C:0ADDH         LINE#         80
+  C:0ADDH         LINE#         81
+  C:0ADDH         LINE#         82
+  C:0ADDH         LINE#         83
+  C:0ADDH         LINE#         84
+  C:0AE0H         LINE#         85
+  C:0AE2H         LINE#         86
+  -------         ENDPROC       _WRITE_DATA
+  -------         PROC          INIT
+  C:0A58H         LINE#         87
+  C:0A58H         LINE#         88
+  C:0A58H         LINE#         89
+  C:0A5AH         LINE#         90
+  C:0A5CH         LINE#         91
+  C:0A5EH         LINE#         92
+  C:0A63H         LINE#         93
+  C:0A68H         LINE#         94
+  C:0A6DH         LINE#         95
+  -------         ENDPROC       INIT
+  -------         PROC          _WRITE1602_STR
+  D:0007H         SYMBOL        addr
+  D:000EH         SYMBOL        length
+  D:000FH         SYMBOL        pbuf
+  -------         DO            
+  D:0012H         SYMBOL        i
+  -------         ENDDO         
+  C:0A07H         LINE#         97
+  C:0A0FH         LINE#         98
+  C:0A0FH         LINE#         100
+  C:0A12H         LINE#         101
+  C:0A1CH         LINE#         102
+  C:0A33H         LINE#         103
+  -------         ENDPROC       _WRITE1602_STR
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        MOTORDRIVER
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/19/2021  16:45:48  PAGE 5
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:0B10H         PUBLIC        LeftMotoForward
+  D:00A8H         PUBLIC        IE
+  C:0B06H         PUBLIC        RightMotoBack
+  D:00B8H         PUBLIC        IP
+  C:0B0BH         PUBLIC        LeftMotoBack
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:0090H.7       PUBLIC        IN1
+  B:0090H.6       PUBLIC        IN2
+  B:0090H.5       PUBLIC        IN3
+  B:0090H.4       PUBLIC        IN4
+  C:0B15H         PUBLIC        RightMotoStop
+  C:0B1AH         PUBLIC        LeftMotoStop
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  C:0B01H         PUBLIC        RightMotoForward
+  -------         PROC          RIGHTMOTOFORWARD
+  C:0B01H         LINE#         9
+  C:0B01H         LINE#         10
+  -------         ENDPROC       RIGHTMOTOFORWARD
+  -------         PROC          RIGHTMOTOBACK
+  C:0B06H         LINE#         11
+  C:0B06H         LINE#         12
+  -------         ENDPROC       RIGHTMOTOBACK
+  -------         PROC          LEFTMOTOBACK
+  C:0B0BH         LINE#         13
+  C:0B0BH         LINE#         14
+  -------         ENDPROC       LEFTMOTOBACK
+  -------         PROC          LEFTMOTOFORWARD
+  C:0B10H         LINE#         15
+  C:0B10H         LINE#         16
+  -------         ENDPROC       LEFTMOTOFORWARD
+  -------         PROC          RIGHTMOTOSTOP
+  C:0B15H         LINE#         17
+  C:0B15H         LINE#         18
+  -------         ENDPROC       RIGHTMOTOSTOP
+  -------         PROC          LEFTMOTOSTOP
+  C:0B1AH         LINE#         19
+  C:0B1AH         LINE#         20
+  -------         ENDPROC       LEFTMOTOSTOP
+  -------         ENDMOD        MOTORDRIVER
+
+  -------         MODULE        MOVESTATE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:0AE9H         PUBLIC        CarBack
+  D:00A8H         PUBLIC        IE
+  C:0AEFH         PUBLIC        CarRight
+  D:00B8H         PUBLIC        IP
+  C:0AF5H         PUBLIC        CarLeft
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0AFBH         PUBLIC        CarStop
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/19/2021  16:45:48  PAGE 6
+
+
+  C:0AE3H         PUBLIC        CarGo
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          CARGO
+  C:0AE3H         LINE#         4
+  C:0AE3H         LINE#         5
+  -------         ENDPROC       CARGO
+  -------         PROC          CARBACK
+  C:0AE9H         LINE#         7
+  C:0AE9H         LINE#         8
+  -------         ENDPROC       CARBACK
+  -------         PROC          CARRIGHT
+  C:0AEFH         LINE#         10
+  C:0AEFH         LINE#         11
+  -------         ENDPROC       CARRIGHT
+  -------         PROC          CARLEFT
+  C:0AF5H         LINE#         13
+  C:0AF5H         LINE#         14
+  -------         ENDPROC       CARLEFT
+  -------         PROC          CARSTOP
+  C:0AFBH         LINE#         16
+  C:0AFBH         LINE#         17
+  -------         ENDPROC       CARSTOP
+  -------         ENDMOD        MOVESTATE
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0A88H         PUBLIC        _Delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        xms
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0A88H         LINE#         1
+  C:0A88H         LINE#         2
+  C:0A88H         LINE#         4
+  C:0A92H         LINE#         5
+  C:0A94H         LINE#         6
+  C:0A96H         LINE#         8
+  C:0A96H         LINE#         9
+  C:0A98H         LINE#         10
+  C:0A9AH         LINE#         11
+  C:0A9CH         LINE#         12
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        TIMER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0AB2H         PUBLIC        Timer0_Init
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/19/2021  16:45:48  PAGE 7
+
+
+  D:0088H         PUBLIC        TCON
+  D:0008H         PUBLIC        PWML
+  D:000AH         PUBLIC        PWMR
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  B:0090H.1       PUBLIC        ENL
+  B:0090H.0       PUBLIC        ENR
+  D:00C8H         PUBLIC        T2CON
+  D:000CH         PUBLIC        t
+  C:08FFH         PUBLIC        Timer0_Routinue
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          TIMER0_INIT
+  C:0AB2H         LINE#         9
+  C:0AB2H         LINE#         10
+  C:0AB2H         LINE#         13
+  C:0AB5H         LINE#         15
+  C:0AB8H         LINE#         16
+  C:0ABBH         LINE#         17
+  C:0ABDH         LINE#         18
+  C:0ABFH         LINE#         19
+  C:0AC1H         LINE#         20
+  -------         ENDPROC       TIMER0_INIT
+  -------         PROC          TIMER0_ROUTINUE
+  C:08FFH         LINE#         25
+  C:0903H         LINE#         28
+  C:0906H         LINE#         29
+  C:0909H         LINE#         30
+  C:0911H         LINE#         31
+  C:091AH         LINE#         32
+  C:091AH         LINE#         33
+  C:091CH         LINE#         34
+  C:091EH         LINE#         36
+  C:091EH         LINE#         37
+  C:0920H         LINE#         38
+  C:0920H         LINE#         39
+  C:092BH         LINE#         40
+  C:092BH         LINE#         41
+  C:092DH         LINE#         42
+  C:092FH         LINE#         44
+  C:092FH         LINE#         45
+  C:0931H         LINE#         46
+  C:0931H         LINE#         48
+  C:093CH         LINE#         49
+  C:093CH         LINE#         50
+  C:0942H         LINE#         51
+  C:0942H         LINE#         52
+  -------         ENDPROC       TIMER0_ROUTINUE
+  -------         ENDMOD        TIMER
+
+  -------         MODULE        INFRAREDTRACK
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/19/2021  16:45:48  PAGE 8
+
+
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00C8H         PUBLIC        T2CON
+  B:00B0H.3       PUBLIC        D1
+  B:00B0H.4       PUBLIC        D2
+  B:00B0H.5       PUBLIC        D3
+  C:088CH         PUBLIC        Track
+  B:00B0H.6       PUBLIC        D4
+  B:00B0H.7       PUBLIC        D5
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          TRACK
+  C:088CH         LINE#         13
+  C:088CH         LINE#         14
+  C:088CH         LINE#         16
+  C:089BH         LINE#         17
+  C:089BH         LINE#         19
+  C:08A0H         LINE#         20
+  C:08A4H         LINE#         21
+  C:08A7H         LINE#         22
+  C:08A7H         LINE#         26
+  C:08B6H         LINE#         27
+  C:08B6H         LINE#         29
+  C:08BCH         LINE#         30
+  C:08C1H         LINE#         31
+  C:08C4H         LINE#         32
+  C:08C4H         LINE#         45
+  C:08D3H         LINE#         46
+  C:08D3H         LINE#         48
+  C:08D8H         LINE#         49
+  C:08DDH         LINE#         50
+  C:08E0H         LINE#         51
+  C:08E0H         LINE#         66
+  C:08EFH         LINE#         67
+  C:08EFH         LINE#         69
+  C:08F5H         LINE#         70
+  C:08FBH         LINE#         71
+  C:08FEH         LINE#         73
+  C:08FEH         LINE#         74
+  -------         ENDPROC       TRACK
+  -------         ENDMOD        INFRAREDTRACK
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0947H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        STRLEN
+  C:0A9DH         PUBLIC        _STRLEN
+  -------         ENDMOD        STRLEN
+
+  -------         MODULE        ?C?CLDPTR
+  C:0974H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  .\Objects\Delay.obj (DELAY)
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/19/2021  16:45:48  PAGE 9
+
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?XIANSHI?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CARBACK?MOVESTATE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CARRIGHT?MOVESTATE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CARLEFT?MOVESTATE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?DELAY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 023AH BYTE (27%) *
+******************************************************************************
+
+Program Size: data=21.0 xdata=0 code=805
+LINK/LOCATE RUN COMPLETE.  5 WARNING(S),  1 ERROR(S)

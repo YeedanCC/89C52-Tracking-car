@@ -1,0 +1,41 @@
+C51 COMPILER V9.00   MOVESTATE                                                             12/19/2021 16:45:47 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE MOVESTATE
+OBJECT MODULE PLACED IN .\Objects\MoveState.obj
+COMPILER INVOKED BY: D:\C51\BIN\C51.EXE MoveState.c BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\MoveState.lst) OBJECT(.\O
+                    -bjects\MoveState.obj)
+
+line level    source
+
+   1          #include <reg52.h>
+   2          #include "Motordirver.h"
+   3          
+   4          void CarGo()
+   5          {RightMotoForward();LeftMotoForward();}
+   6          
+   7          void CarBack()
+   8          {RightMotoBack();LeftMotoBack();}
+   9                  
+  10          void CarRight()
+  11          {RightMotoStop();LeftMotoForward();}
+  12                  
+  13          void CarLeft()
+  14          {LeftMotoStop();RightMotoForward();}
+  15          
+  16          void CarStop()
+  17          {RightMotoStop();LeftMotoStop();}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     30    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

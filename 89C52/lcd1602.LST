@@ -1,0 +1,133 @@
+C51 COMPILER V9.00   LCD1602                                                               12/23/2021 14:39:23 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE LCD1602
+OBJECT MODULE PLACED IN lcd1602.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lcd1602.c OMF2 BROWSE DEBUG
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include<intrins.h >
+   3          #include<lcd1602.h >
+   4          #define LCD_PORT P0
+   5          //#define uchar unsigned char
+   6          //#define uint unsigned int
+   7          sbit RS=P1^0;
+   8          sbit RW=P1^1;
+   9          sbit E=P1^2;
+  10          
+  11          ////    lcd1602_init();
+  12          //      lcd1602_write_cmd(); //确定显示位置 
+  13          //      lcd1602_write_data();//确定显示内容 
+  14          //      lcd1602_char(); 
+  15          
+  16          void delay1ms()
+  17          {
+  18   1              unsigned char i,j;
+  19   1              for(i=0;i<10;i++)
+  20   1               for(j=0;j<33;j++)
+  21   1               ;
+  22   1       } 
+  23          void ddelay(unsigned char n)
+  24          {
+  25   1              unsigned char i;
+  26   1              for(i=0;i<n;i++)
+  27   1              delay1ms();
+  28   1      }
+  29          
+  30          
+  31          void lcd1602_write_cmd(del)
+  32          {
+  33   1              LCD_PORT = del;
+  34   1              RS=0;
+  35   1              RW=0;
+  36   1              E=0;
+  37   1              ddelay(2);
+  38   1      //      P0=dictate;
+  39   1              E=1;
+  40   1              ddelay(2);
+  41   1              
+  42   1      }
+  43          //void lcd1602_write_data(viod)
+  44          //{
+  45                  
+  46          //}
+  47          void lcd1602_write_data(unsigned char del)//写数据? 输入：RS=H；RW=L；
+  48          {
+  49   1              LCD_PORT = del; //D0~D7=数据；E=高脉冲
+  50   1              RS = 1;
+  51   1              RW = 0;  //输出：无
+  52   1              E = 0;
+  53   1              ddelay(2);
+  54   1              E = 1;
+  55   1              ddelay(2);
+C51 COMPILER V9.00   LCD1602                                                               12/23/2021 14:39:23 PAGE 2   
+
+  56   1      } 
+  57          
+  58          //unsigned char busytest(void)
+  59          //{
+  60          //      bit result;
+  61          //      RS=0;
+  62          //      RW=1;
+  63          //      E=1;
+  64          //      _nop_();
+  65          //      _nop_();
+  66          //      _nop_();
+  67          //      _nop_();
+  68          //      E=0; 
+  69          //}
+  70          
+  71          void lcd1602_char(unsigned char hang,unsigned char lie,char dat)
+  72          {
+  73   1              unsigned char a;
+  74   1              if(hang == 0) a = 0x80;
+  75   1              if(hang == 1) a = 0xc0;
+  76   1              a = a + lie;
+  77   1              lcd1602_write_cmd(a);//调用写指令函数
+  78   1              lcd1602_write_data(dat);//调用写数据函数* 
+  79   1      }  //输入 : 行，列，需要输入1602的数据
+  80          
+  81          void lcd1602_init(void)
+  82          {
+  83   1              ddelay(15);
+  84   1              lcd1602_write_cmd(0x38);
+  85   1              ddelay(5);
+  86   1              lcd1602_write_cmd(0x38);
+  87   1              lcd1602_write_cmd(0x08);
+  88   1              lcd1602_write_cmd(0x01);
+  89   1              lcd1602_write_cmd(0x06);
+  90   1              lcd1602_write_cmd(0x0c);
+  91   1      } 
+  92          
+  93          // int xianshi(void)
+  94          //{
+  95          //      while(1){       
+  96          //      lcd1602_init();
+  97          //      lcd1602_write_cmd(0x82); //确定显示位置 
+  98          //      lcd1602_write_data(0x41);//确定显示内容 
+  99          //      lcd1602_char(0,3,'b'); }
+ 100          //
+ 101          //}
+ 102          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    134    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+C51 COMPILER V9.00   LCD1602                                                               12/23/2021 14:39:23 PAGE 3   
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
